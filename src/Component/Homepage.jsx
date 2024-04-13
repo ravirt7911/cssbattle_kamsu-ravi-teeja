@@ -1,7 +1,7 @@
-// src/components/Homepage.js
-
 import React, { useState, useEffect } from "react";
 import { HotKeys } from "react-hotkeys";
+import confetti from "canvas-confetti";
+import "./Homepage.css";
 
 const Homepage = () => {
   const [sequence, setSequence] = useState("");
@@ -22,8 +22,7 @@ const Homepage = () => {
     setSequence((prevSequence) => prevSequence + key);
     console.log(sequence);
     if ((sequence + key).toLowerCase() === "cssbattle") {
-      alert("You won!");
-      console.log("You won!");
+      celebrate();
     }
   };
 
@@ -35,6 +34,16 @@ const Homepage = () => {
     LETTER: (key) => {
       handleSequenceChange(key);
     },
+  };
+
+  const celebrate = () => {
+    confetti({
+      particleCount: 1000,
+      spread: 100,
+      origin: { y: 0.6 },
+      colors: ["#FF0000", "#00FF00", "#0000FF"],
+      startVelocity: 20,
+    });
   };
 
   return (
