@@ -18,6 +18,7 @@ const Homepage = () => {
     };
   }, [sequence]);
 
+  // Update sequence on keypress
   const handleSequenceChange = (key) => {
     setSequence((prevSequence) => prevSequence + key);
     console.log(sequence);
@@ -26,16 +27,18 @@ const Homepage = () => {
     }
   };
 
+  // Key mappings
   const keyMap = {
     LETTER: "a b c e l s t ",
   };
 
+  // Key event handlers
   const handlers = {
     LETTER: (key) => {
       handleSequenceChange(key);
     },
   };
-
+  // Trigger confetti celebration
   const celebrate = () => {
     // Left confetti blast
     confetti({
