@@ -41,7 +41,7 @@ const Homepage = () => {
     confetti({
       particleCount: 900,
       angle: 270,
-      spread: 150,
+      spread: 200,
       origin: { x: 0, y: 0 },
       colors: ["#FF0000", "#FFFF00", "#00FF00", "#0000FF"],
       shapes: ["square", "circle"],
@@ -51,7 +51,7 @@ const Homepage = () => {
     confetti({
       particleCount: 900,
       angle: 270,
-      spread: 150,
+      spread: 200,
       origin: { x: 1, y: 0 },
       colors: ["#FF0000", "#FFFF00", "#00FF00", "#0000FF"],
       shapes: ["square", "circle"],
