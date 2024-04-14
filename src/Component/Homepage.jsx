@@ -37,16 +37,23 @@ const Homepage = () => {
   };
 
   const celebrate = () => {
+    // Left confetti blast
     confetti({
-      particleCount: 700,
-      spread: 360,
-      colors: [
-        "#FF0000", // Red
-        "#FFA500", // Orange
-        "#FFFF00", // Yellow
-        "#00FF00", // Green
-        "#0000FF", // Blue
-      ],
+      particleCount: 750,
+      angle: 60,
+      spread: 100,
+      origin: { x: 0, y: 1 },
+      colors: ["#FF0000", "#FFFF00", "#00FF00", "#0000FF"],
+      shapes: ["square", "circle", "triangle"],
+    });
+
+    // Right confetti blast
+    confetti({
+      particleCount: 750,
+      angle: 120,
+      spread: 100,
+      origin: { x: 1, y: 1 },
+      colors: ["#FF0000", "#FFFF00", "#00FF00", "#0000FF"],
       shapes: ["square", "circle", "triangle"],
     });
   };
