@@ -27,7 +27,7 @@ const Homepage = () => {
   };
 
   const keyMap = {
-    LETTER: "a b c d e f g h i j k l m n o p q r s t u v w x y z",
+    LETTER: "a b c e l s t ",
   };
 
   const handlers = {
@@ -38,18 +38,24 @@ const Homepage = () => {
 
   const celebrate = () => {
     confetti({
-      particleCount: 1000,
-      spread: 100,
-      origin: { y: 0.6 },
-      colors: ["#FF0000", "#00FF00", "#0000FF"],
-      startVelocity: 20,
+      particleCount: 700,
+      spread: 360,
+      colors: [
+        "#FF0000", // Red
+        "#FFA500", // Orange
+        "#FFFF00", // Yellow
+        "#00FF00", // Green
+        "#0000FF", // Blue
+      ],
+      shapes: ["square", "circle", "triangle"],
     });
   };
 
   return (
-    <div className="home-page" tabIndex="0">
+    <div className="main" tabIndex="0">
+      <img className="logo" src="./logo-new.svg" alt="logo" />
       <HotKeys keyMap={keyMap} handlers={handlers}>
-        <div>Type "cssbattle"</div>
+        <div className="home-page">Type "cssbattle"</div>
       </HotKeys>
     </div>
   );
