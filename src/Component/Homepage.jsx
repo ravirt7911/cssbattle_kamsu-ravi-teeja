@@ -5,6 +5,7 @@ import "./Homepage.css";
 
 const Homepage = () => {
   const [sequence, setSequence] = useState("");
+  const [cssBattleTyped, setCssBattleTyped] = useState(false);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -22,10 +23,19 @@ const Homepage = () => {
   const handleSequenceChange = (key) => {
     setSequence((prevSequence) => prevSequence + key);
     console.log(sequence);
-    if ((sequence + key).toLowerCase() === "cssbattle") {
-      celebrate();
+    if ((sequence + key).toLowerCase().includes("cssbattle")) {
+      setCssBattleTyped(true);
+    } else {
+      setCssBattleTyped(false);
     }
   };
+
+  useEffect(() => {
+    if (cssBattleTyped) {
+      celebrate();
+      setSequence("");
+    }
+  }, [cssBattleTyped]);
 
   // Key mappings
   const keyMap = {
@@ -38,6 +48,7 @@ const Homepage = () => {
       handleSequenceChange(key);
     },
   };
+
   // Trigger confetti celebration
   const celebrate = () => {
     // Left confetti blast
